@@ -15,4 +15,4 @@ It is necessary to have installed: Python 3.5.2 and dowload [Monkey Species Data
 
 The present code has been developed under python3 using Anaconda Notebook. The simplest way to run the program is opening the notebook.
 
- [Monkey Species Classification Notebook](https://github.com/xexuew/Monkey-Species-Classification/source)
+ [Monkey Species Classification Notebook Training](https://github.com/xexuew/Monkey-Species-Classification/blob/master/notebooks/Train%20Model.ipynb)
