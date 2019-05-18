@@ -29,18 +29,18 @@ class CNNModel(object):
         
     def build_model(self):
         model = Sequential()
-        model.add(Conv2D(self.NB_FILTERS, (self.CONV1_SIZE , self.CONV1_SIZE ), activation='relu', input_shape=self.INPUT_SHAPE))
-        model.add(Conv2D(self.NB_FILTERS, (self.CONV1_SIZE, self.CONV1_SIZE), activation='relu'))
+        model.add(Conv2D(32, (self.CONV1_SIZE , self.CONV1_SIZE ), activation='relu', input_shape=self.INPUT_SHAPE))
+        model.add(Conv2D(64, (self.CONV1_SIZE, self.CONV1_SIZE), activation='relu'))
         model.add(MaxPooling2D(pool_size=(self.CONV2_SIZE , self.CONV2_SIZE )))
         model.add(Dropout(0.25))
         
-        model.add(Conv2D(self.NB2_FILTERS, (self.CONV1_SIZE, self.CONV1_SIZE), activation='relu'))
-        model.add(Conv2D(self.NB2_FILTERS, (self.CONV1_SIZE, self.CONV1_SIZE), activation='relu'))
+        model.add(Conv2D(128, (self.CONV1_SIZE, self.CONV1_SIZE), activation='relu'))
+        model.add(Conv2D(64, (self.CONV1_SIZE, self.CONV1_SIZE), activation='relu'))
         model.add(MaxPooling2D(pool_size=(self.CONV2_SIZE , self.CONV2_SIZE )))
         model.add(Dropout(0.25))
         
         model.add(Flatten())
-        model.add(Dense(256, activation='relu'))
+        model.add(Dense(512, activation='relu'))
         model.add(Dropout(0.5))
         model.add(Dense(self.NUM_CLASSES, activation='softmax'))
         
